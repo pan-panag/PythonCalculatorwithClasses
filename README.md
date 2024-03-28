@@ -25,7 +25,7 @@ For users:
         -The format for the mod function is "x mod y".
 
         
-    Keyboard integration:
+Keyboard integration:
         -Tapping the <0-9> keys on your keyboard, or your numpad inputs the respective number.
         -Tapping <e> inputs e.
         -Tapping <p> inputs π.
