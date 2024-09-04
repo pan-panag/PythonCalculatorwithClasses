@@ -234,47 +234,60 @@ class GUI():
 
         #Keybinds
         def key_pressed(event):
-            if event.char=="0":
-                ButtonOperations.button_operation(self,"0")
-            if event.char=="1":
-                ButtonOperations.button_operation(self,"1")
-            if event.char=="2":
-                ButtonOperations.button_operation(self,"2")
-            if event.char=="3":
-                ButtonOperations.button_operation(self,"3")
-            if event.char=="4":
-                ButtonOperations.button_operation(self,"4")
-            if event.char=="5":
-                ButtonOperations.button_operation(self,"5")
-            if event.char=="6":
-                ButtonOperations.button_operation(self,"6")
-            if event.char=="7":
-                ButtonOperations.button_operation(self,"7")
-            if event.char=="8":
-                ButtonOperations.button_operation(self,"8")
-            if event.char=="9":
-                ButtonOperations.button_operation(self,"9")
-            if event.char=="+":
-                ButtonOperations.button_operation(self,"+")
-            if event.char=="-":
-                ButtonOperations.button_operation(self,"-")
-            if event.char=="*":
-                ButtonOperations.button_operation(self,"×")
-            if event.char=="/":
-                ButtonOperations.button_operation(self,"÷")
-            if event.char=="(":
-                ButtonOperations.button_operation(self,"(")
-            if event.char==")":
-                ButtonOperations.button_operation(self,")")
-            if event.char==".":
-                ButtonOperations.button_operation(self,".")
-            if event.char=="e":
-                ButtonOperations.button_operation(self,"e")
-            if event.char=="π" or event.char=="p":
-                ButtonOperations.button_operation(self,"π")
-            if event.char=="a" or event.char=="A":
-                ButtonOperations.all_clear_operation(self)
-        root.bind("<KeyPress>", key_pressed)
+            key_operations = {
+                "0": "0", "1": "1", "2": "2", "3": "3", "4": "4",
+                "5": "5", "6": "6", "7": "7", "8": "8", "9": "9",
+                "+": "+", "-": "-", "*": "×", "/": "/", "(": "(",
+                ")": ")", ".": ".", "e": "e", "π": "π", "p": "π"
+            }
+            
+            if event.char in key_operations:
+                ButtonOperations.button_operation(self, key_operations[event.char])
+            root.bind("<KeyPress>", key_pressed)
+
+        
+        # def key_pressed(event):
+        #     if event.char=="0":
+        #         ButtonOperations.button_operation(self,"0")
+        #     if event.char=="1":
+        #         ButtonOperations.button_operation(self,"1")
+        #     if event.char=="2":
+        #         ButtonOperations.button_operation(self,"2")
+        #     if event.char=="3":
+        #         ButtonOperations.button_operation(self,"3")
+        #     if event.char=="4":
+        #         ButtonOperations.button_operation(self,"4")
+        #     if event.char=="5":
+        #         ButtonOperations.button_operation(self,"5")
+        #     if event.char=="6":
+        #         ButtonOperations.button_operation(self,"6")
+        #     if event.char=="7":
+        #         ButtonOperations.button_operation(self,"7")
+        #     if event.char=="8":
+        #         ButtonOperations.button_operation(self,"8")
+        #     if event.char=="9":
+        #         ButtonOperations.button_operation(self,"9")
+        #     if event.char=="+":
+        #         ButtonOperations.button_operation(self,"+")
+        #     if event.char=="-":
+        #         ButtonOperations.button_operation(self,"-")
+        #     if event.char=="*":
+        #         ButtonOperations.button_operation(self,"×")
+        #     if event.char=="/":
+        #         ButtonOperations.button_operation(self,"÷")
+        #     if event.char=="(":
+        #         ButtonOperations.button_operation(self,"(")
+        #     if event.char==")":
+        #         ButtonOperations.button_operation(self,")")
+        #     if event.char==".":
+        #         ButtonOperations.button_operation(self,".")
+        #     if event.char=="e":
+        #         ButtonOperations.button_operation(self,"e")
+        #     if event.char=="π" or event.char=="p":
+        #         ButtonOperations.button_operation(self,"π")
+        #     if event.char=="a" or event.char=="A":
+        #         ButtonOperations.all_clear_operation(self)
+        # root.bind("<KeyPress>", key_pressed)
         
         def backspace_pressed(event):
             if event.keysym=="BackSpace":
